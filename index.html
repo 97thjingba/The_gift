@@ -68,7 +68,7 @@
         position: relative;
       }
       #section2 {
-        background-image: url(img/3.jpg);
+        background-image: url("img/video/11111.gif");
         padding: 6% 0 0 0;
       }
       #section3 {
@@ -103,7 +103,7 @@
       </script>
     <![endif]-->
   </head>
-  <body>
+  <body onload="start();">
     <a href="https://github.com/alvarotrigo/fullPage.js" id="githubLink"
       ><img
         style="position: fixed;z-index:99; top: 0; right: 0; border: 0;"
@@ -159,9 +159,8 @@
 
     <div id="fullpage">
       <div class="section " id="section0">
-        <video id="myVideo" loop muted data-autoplay>
+        <video autoplay id="myVideo" loop muted>
           <source src="img/video/city_night.mp4" type="video/mp4" />
-          <source src="imgs/flowers.webm" type="video/webm" />
         </video>
       </div>
       <div class="section " id="section0"><h1>fullPage.js</h1></div>
@@ -184,6 +183,10 @@
       var myFullpage = new fullpage("#fullpage", {
         verticalCentered: false
       });
+      function start() {
+        var dom = document.getElementById("myVideo");
+        dom.addEventListener("touchstart", onTouchStart, false);
+      }
     </script>
   </body>
 </html>
